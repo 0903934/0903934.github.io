@@ -1,102 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>RGU Homepage</title>
+	<title>Fantasy Clash</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
 
-    <header>
+	<header>
+		<div class="logo">
+			<a href="index.html"><img src="img/logo1.png" title="Fantasy Clash" alt="Fantasy Clash"/></a>
+		</div><!-- end logo -->
 
-            <div id="quicklinks">
-                <ul>
-                    <li><a href="#">Home</a> </li>
-                    <li><a href="#">About</a> </li>
-                    <li><a href="#">RGYou</a> </li>
-                    <li><a href="#">Staff & Current Students</a> </li>
-                    <li><a href="#">A to Z</a> </li>
+		<div id="menu_icon"></div>
+		<nav>
+			<ul>
+				<li><a href="index.html" class="selected">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">How to Play</a></li>
+				<li><a href="#">The Races</a></li>
+				<li><a href="#">Kickstarter</a></li>
+                <li><a href="#">Register/Login</a></li>
+			</ul>
+		</nav><!-- end navigation menu -->
 
-                </ul>
-            </div>
+		<div class="footer clearfix">
+			<ul class="social clearfix">
+				<li><a href="#" class="fb" data-title="Facebook"></a></li>
+				<li><a href="#" class="google" data-title="Google +"></a></li>
+				<li><a href="#" class="behance" data-title="Behance"></a></li>
+				<!--<li><a href="#" class="twitter" data-title="Twitter"></a></li>
+				<li><a href="#" class="dribble" data-title="Dribble"></a></li>-->
+				<li><a href="#" class="rss" data-title="RSS"></a></li>
+			</ul><!-- end social -->
 
-            <img id="rgu_logo" src="RGU_logo.jpg" alt="Robert Gordon University">
+			
+		</div ><!-- end footer -->
+	</header><!-- end header -->
 
-            <div id="searchbox">
-                    <form>
-                        <p>Search</p>
-                        <input type ="text" name="Searchfield">
-                        <input type ="submit" value ="go">
-                    </form>
-            </div>
+	<section class="main clearfix">
+		<div class="work">
+			<a href="inner.html">
+				<img src="img/templars.jpg" class="media" alt=""/>
+				<div class="caption">
+					<div class="work_title">
+						<h1>The Humans</h1>
+					</div>
+				</div>
+			</a>
+		</div>
 
-            <nav>
-                <ul>
-                    <li><a href="#">Areas of Study</a> </li>
-                    <li><a href="#">Future Students</a> </li>
-                    <li><a href="#">...</a> </li>
-                    <li><a href="#">Contact Us</a> </li>
-                </ul>
-            </nav>
-    </header>
+		<div class="work">
+			<a href="#">
+				<img src="img/heavies.jpg" class="media" alt=""/>
+				<div class="caption">
+					<div class="work_title">
+						<h1>The Orcs</h1>
+					</div>
+				</div>
+			</a>
+		</div>
 
-        <main>
-            <!--Section 1 -->
-            <section>
-                <h2> Search our Courses</h2>
+		<div class="work">
+			<a href="#">
+				<img src="img/dragons.jpg" class="media" alt=""/>
+				<div class="caption">
+					<div class="work_title">
+						<h1>The Dragons</h1>
+					</div>
+				</div>
+			</a>
+		</div>
 
+		<div class="work">
+			<a href="#">
+				<img src="img/ailens.jpg" class="media" alt=""/>
+				<div class="caption">
+					<div class="work_title">
+						<h1>The Ailens</h1>
+					</div>
+				</div>
+			</a>
+		</div>
 
-            <form>
-                <input type ="text" name ="keyboardbox" value="Enter Keyword">
-                <select>
-                    <option value ="compsci">Computer Science</option>
-                    <option value ="compsci">Digital Media</option>
-                    <option value ="compsci">Computer Network Management and Design</option>
-                    <option value ="compsci">Other</option>
-                </select>
-                <input type="submit" value = search>
-            </form>
-            <ul>
-                <li><a href="#">Architecture, Construction & Surveying</a> </li>
-                <li><a href="#">Business Management & Accounting</a> </li>
-                <li><a href="#">Engineering</a> </li>
-                <li><a href="#">...</a> </li>
-            </ul>
+		<div class="work">
+			<a href="#">
+				<img src="img/priest.jpg" class="media" alt=""/>
+				<div class="caption">
+					<div class="work_title">
+						<h1>The Aegyptus</h1>
+					</div>
+				</div>
+			</a>
+		</div>
 
-            </section>
-            <!--Section 2 -->
-            <section>
-                <img src="banner.jpg" alt ="Banner of RGU">
-            </section>
-            <!--Section 3 -->
-            <section>
-                <!--Article 1 -->
-                <article>
-                    <h3>RGU joins Teaching Elite</h3>
-                    <img src="teaching.jpg" alt ="Picture of teaching elite student">
-                    <p>RGU has been awarded a Gold rating in the Teaching Excellence Framework</p>
-                </article>
+		<div class="work">
+			<a href="#">
+				<img src="img/kickstarter.jpg" class="media" alt=""/>
+				<div class="caption">
+					<div class="work_title">
+						<h1>Our Kickstarter</h1>
+					</div>
+				</div>
+			</a>
+		</div>
 
-                <!--Article 2 -->
-                <article>
-                    <h3>Professional Lectures</h3>
-                    <img src="Professional_Lectures.jpg" alt ="Picture of RGU Interior">
-                    <p>Our engaging series on a wide range of topics, encouraging intellectual thinking & discussion</p>
-                </article>
+		<div class="work">
+			<a href="inner.html">
+				<img src="img/wor2.jpg" class="media" alt=""/>
+				<div class="caption">
+					<div class="work_title">
+						<h1>culpa qui officia deserunt mollit</h1>
+					</div>
+				</div>
+			</a>
+		</div>
 
-                <!--Article 3 -->
-                <article>
-                    <h3>Online and Distance Learning</h3>
-                    <img src="Distance_Learning.jpg" alt ="Picture ofLaptop being used">
-                    <p>A better way to combine work and study wherever you are.</p>
-                </article>
+		<div class="work">
+			<a href="inner.html">
+				<img src="img/work.jpg" class="media" alt=""/>
+				<div class="caption">
+					<div class="work_title">
+						<h1>culpa qui officia deserunt mollit</h1>
+					</div>
+				</div>
+			</a>
+		</div>
 
-            </section>
-
-        </main>
-
-    <footer>
-
-    </footer>
-
+		<div class="work">
+			<a href="inner.html">
+				<img src="img/work.jpg" class="media" alt=""/>
+				<div class="caption">
+					<div class="work_title">
+						<h1>culpa qui officia deserunt mollit</h1>
+					</div>
+				</div>
+			</a>
+		</div>
+	</section><!-- end main -->
+	
 </body>
 </html>
