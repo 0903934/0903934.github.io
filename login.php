@@ -9,7 +9,7 @@ if(empty($_POST["username"]) || empty($_POST ["password"]))
     $password=$_POST['password'];
 
 
-    $query = "SELECT * FROM [users].[dbo].[users] WHERE user='{$username}' AND"
+    $query = "SELECT * FROM [users].[dbo].[users4] WHERE user='{$username}' AND"
          ."password='{$password}' AND active='1'";
 $result = sqlsrv_query($conn, $query); 
     
