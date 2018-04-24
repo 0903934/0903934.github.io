@@ -8,9 +8,11 @@ if(empty($_POST["username"]) || empty($_POST ["password"]))
     $username=$_POST['username'];
     $password=$_POST['password'];
 
-    $sql="SELECT ID FROM users WHERE username='$username' and password='$password'";
-    $result=sqlsrv_query($conn,$query);
 
+    $query = "SELECT * FROM [users].[dbo].[users] WHERE user='{$username}' AND"
+         ."password='{$password}' AND active='1'";
+$result = sqlsrv_query($conn, $query); 
+    
     if (mysqli_num_rows($result) == 1)
     {
         header("location: index.html");
@@ -19,5 +21,12 @@ if(empty($_POST["username"]) || empty($_POST ["password"]))
         echo "Incorrect username or password.";
     }
 }
+
+while($row = sqlsrv_fetch_array($result)){
+       $_SESSION['id'] = $row['id'];
+       $_SESSION['name'] = $row['name'];
+       $_SESSION['user'] = $row['username'];
+       $_SESSION['level'] = $row['level'];
+    }
 
 ?>
