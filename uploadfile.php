@@ -6,8 +6,11 @@
 <head>
     <title>Fantasy Clash</title>
     <meta charset="utf-8" />
+    <!-- favicon added to the tab on webpage -->
+    <link rel="shortcut icon" type="image/png" href="images/favdragon.png"/>
+    <!-- Used for changing the view on different devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <script src="assets/js/ie/html5shiv.js"></script>
     <link rel="stylesheet" href="assets/css/main.css" />
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
@@ -43,44 +46,53 @@
     <!-- Banner -->
     <section id="banner">
         <div class="content">
-            <form action="" method="POST" enctype="multipart/form-data">
-                <input type="file" name="image" />
-                <input type="submit"/>
-                <a href="loginsuccess.html"> Back to your homepage</a>
-                <?php
-                if(isset($_FILES['image'])){
-                    $errors= array();
-                    $file_name = $_FILES['image']['name'];
-                    $file_size =$_FILES['image']['size'];
-                    $file_tmp =$_FILES['image']['tmp_name'];
-                    $file_type=$_FILES['image']['type'];
-                    $file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
-
-                    $expensions= array("jpeg","jpg","png");
-
-                    if(in_array($file_ext,$expensions)=== false){
-                        $errors[]="extension not allowed, please choose a JPEG or PNG file.";
-                    }
-
-                    if($file_size > 2097152){
-                        $errors[]='File size must be excately 2 MB';
-                    }
-
-                    if(empty($errors)==true){
-                        move_uploaded_file($file_tmp,"fileuploads/".$file_name);
-                        echo "Your file has been successfully uploaded!";
-                    }else{
-                        print_r($errors);
-                    }
-                }
-                ?>
+            <form action="uploadfile.php" enctype="multipart/form-data" method="post">
+                Select image :
+                <input type="file" name="file"><br/>
+                <input type="submit" value="Upload" name="Submit1">
+                <a href="loginsuccess.html">Back to your home page</a>
             </form>
+
+
+
+
+
+
+    <?php
+
+    if(isset($_POST['Submit1']))
+    {
+        $extension = pathinfo($_FILES["file"]["name"], PATHINFO_EXTENSION);
+
+        if($extension=='jpg' || $extension=='jpeg' || $extension=='png' || $extension=='gif')
+        {
+
+
+
+        }
+        else
+        {
+            echo "File is not image, please upload a jpg, jpeg or png.";
+        }
+
+        $filepath = "fileuploads/" . $_FILES["file"]["name"];
+
+        if(move_uploaded_file($_FILES["file"]["tmp_name"], $filepath))
+        {
+            echo "<img src=".$filepath."   />";
+
+        }
+        else
+        {
+            echo "Error !!";
+
+        }
+    }
+
+    ?>
+
         </div>
     </section>
-
-
-
-
 
 
     <!-- Footer -->
@@ -94,7 +106,7 @@
             <li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
         </ul>
         <ul class="copyright">
-            <li>&copy; Untitled. All rights reserved.</li><li>Design:</li>
+            <li>&copy; Fantasy Clash. All rights reserved.</li>
         </ul>
     </footer>
 

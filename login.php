@@ -1,14 +1,15 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Stewart
- * Date: 23/03/2018
- * Time: 08:30
+ * User: Peter
+ * Date: 25/03/2018
+ * Time: 11:30
  */
 include ("dbConnect.php");
 
 $username=$_POST["username"];
 $password=$_POST["password"];
+
 //$OK="no";
 
 
@@ -19,8 +20,6 @@ if(empty($_POST['username']) || empty($_POST['password'])){
 
 echo $username;
 echo $password;
-
-
 
 
 //$sql = "SELECT * FROM users WHERE username LIKE '$username' AND password LIKE '$password' ";
